@@ -1,0 +1,4 @@
+# Ignore all image files in this folder to protect biometric photo privacy
+*
+# Keep this .gitignore file so the directory structure is checked into Git
+!.gitignore

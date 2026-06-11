@@ -39,6 +39,10 @@ RaspAttendance/
 
 ### 1. Installation & Environment Setup
 
+You can set up the project using either the traditional setup script or the modern `uv` package manager. Choose the method that works best for your workflow.
+
+#### Option A: Traditional Setup Script
+
 Run the automated setup script to install dependencies, initialize a virtual environment, and compile libraries:
 ```bash
 chmod +x setup.sh
@@ -49,6 +53,67 @@ The script uses `--system-site-packages` to inherit pre-compiled Debian binary l
 To activate the environment:
 ```bash
 source venv/bin/activate
+```
+
+#### Option B: Using `uv` Package Manager (Recommended for Contributors)
+
+The `uv` package manager provides a fast, reliable, and modern approach to dependency management. It works seamlessly across **macOS**, **Linux**, and **Windows**.
+
+**Installation:**
+
+- **macOS / Linux**:
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+  After installation, add `uv` to your PATH by running:
+  ```bash
+  export PATH="$HOME/.local/bin:$PATH"
+  ```
+  Or add this line to your shell configuration file (`~/.bashrc`, `~/.zshrc`, etc.) for persistent access.
+
+- **Windows**:
+  ```bash
+  powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
+  Or use `pip` / `pipx`:
+  ```bash
+  pip install uv
+  ```
+
+**Setup with uv:**
+
+Once `uv` is installed, initialize the project environment:
+```bash
+uv sync
+```
+
+This command reads the `pyproject.toml`, creates a virtual environment, and installs all dependencies in one step.
+
+**Running the Application with uv:**
+
+Run the attendance engine:
+```bash
+uv run python attendance_engine.py
+```
+
+Run the web portal:
+```bash
+uv run python share_logs.py
+```
+
+Or activate the virtual environment created by `uv`:
+```bash
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+```
+
+Then run the scripts normally:
+```bash
+python attendance_engine.py
+python share_logs.py
 ```
 
 ---

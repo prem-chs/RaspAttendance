@@ -152,9 +152,3 @@ To launch both processes automatically at boot:
    ```
 
 ---
-
-## How to Test the Portals
-
-1. Connect your laptop or phone to the Wi-Fi network: **`RaspAttendance`** (Password: `attendance123`).
-2. Open a browser and navigate to: **`http://192.168.4.1:5000`** (or `http://localhost:5000` if testing locally on the Pi).
-3. To access the admin controls, navigate to: **`http://192.168.4.1:5000/admin`** and enter the default password: **`admin123`**.
